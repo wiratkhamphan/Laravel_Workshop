@@ -46,6 +46,10 @@
     @apply p-3 rounded-md shadow-lg pl-5;
 }
 
+.alert-danger {
+    @apply bg-red-500 text-white p-3 rounded-md mb-3;
+}
+
 .alert-success {
     @apply bg-green-500 text-white;
 }
@@ -114,10 +118,17 @@
     @apply rounded-br-2xl;
  }
 
- tbody tr{
+tbody tr {
    @apply border-b border-gray-300;
- }
+}
 
- tbody tr:last-child{
-   @apply border-b-0
- }
+tbody tr:last-child {
+    @apply border-b-0;
+}
+
+
+
+
+
+
+

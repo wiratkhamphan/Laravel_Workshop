@@ -710,7 +710,7 @@
     uploadManager.cancelUpload(name, cancelledCallback);
   }
 
-  // ../alpine/packages/alpinejs/dist/module.esm.js
+  // node_modules/alpinejs/dist/module.esm.js
   var flushPending = false;
   var flushing = false;
   var queue = [];
@@ -900,7 +900,7 @@
       return;
     }
     let addedNodes = [];
-    let removedNodes = /* @__PURE__ */ new Set();
+    let removedNodes = [];
     let addedAttributes = /* @__PURE__ */ new Map();
     let removedAttributes = /* @__PURE__ */ new Map();
     for (let i = 0; i < mutations.length; i++) {
@@ -912,15 +912,11 @@
             return;
           if (!node._x_marker)
             return;
-          removedNodes.add(node);
+          removedNodes.push(node);
         });
         mutations[i].addedNodes.forEach((node) => {
           if (node.nodeType !== 1)
             return;
-          if (removedNodes.has(node)) {
-            removedNodes.delete(node);
-            return;
-          }
           if (node._x_marker)
             return;
           addedNodes.push(node);
@@ -2291,7 +2287,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     get raw() {
       return raw;
     },
-    version: "3.14.5",
+    version: "3.14.4",
     flushAndStopDeferringMutations,
     dontAutoEvaluateFunctions,
     disableEffectScheduling,
